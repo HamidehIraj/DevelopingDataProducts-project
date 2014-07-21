@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\nlibrary(caret)\nlibrary(ggplot2)\ndata(iris)\n\ninTrain  <- createDataPartition(y=iris$Species, p=0.7, list=FALSE)\ntraining <- iris[inTrain,]\ntesting  <- iris[-inTrain,]\n\nshinyServer(function(input, output, session) {\n  output$myImage <- renderImage({\n    # A temp file to save the output.\n    # This file will be removed later by renderImage\n    outfile <- tempfile(fileext='.png')\n    \n    \n    kMeans1 <- kmeans(subset(training,select=-c(Species)),centers=input$k)\n    training$clusters <- as.factor(kMeans1$cluster)\n    \n    # Generate the PNG\n    png(outfile, width=500, height=500)\n    \n    qplot<- qplot(Petal.Width,Petal.Length,colour=clusters,data=training,main=\"iris Data Clusters\")\n    print(qplot)\n    \n    dev.off()\n    \n    \n    # Return a list containing the filename\n    list(src = outfile,\n         contentType = 'image/png',\n         width = 500,\n         height = 500,\n         alt = \"This is alternate text\")\n  }, deleteFile = TRUE)\n  \n})",
+    "created" : 1405958222292.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4109614415",
+    "id" : "BEF988AD",
+    "lastKnownWriteTime" : 1405962413,
+    "path" : "D:/coursera/Data Science Specialization/Developing Data Products/DevelopingDataProducts-project/DevelopingDataProducts-project/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
