@@ -1,11 +1,11 @@
 {
     "contents" : "library(shiny)\n\nshinyUI(pageWithSidebar(\n  headerPanel(\"Clustering iris Data\"),\n  sidebarPanel(\n    sliderInput(\"k\", \"Number of clusters:\",\n                min = 1, max = 5,  value = 3)\n  ),\n  mainPanel(\n    # Use imageOutput to place the image on the page\n    imageOutput(\"myImage\")\n  )\n))",
-    "created" : 1405958225879.000,
+    "created" : 1406383674626.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "2059631833",
-    "id" : "100B3B19",
+    "id" : "67FDDC95",
     "lastKnownWriteTime" : 1405959190,
     "path" : "D:/coursera/Data Science Specialization/Developing Data Products/DevelopingDataProducts-project/DevelopingDataProducts-project/ui.R",
     "project_path" : "ui.R",

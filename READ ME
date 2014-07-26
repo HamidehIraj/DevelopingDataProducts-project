@@ -1,0 +1,17 @@
+This Project is about clustering on iris dataset which is a popular data set in R.
+The user can determine the number of clusters (k) from 1 to 5 and the backend code on server.R clusters the data using kmeans algoithm and shows a plot of clusters.This is an example of unsupervised learning when you have no labels or predefined groups for your data.
+
+you can simply play with the slidebar to see how it is clustered into k groups determined by the user.
+
+I had different errors and problems publishing this app to www.shinyapps.io so please test it locally on your computer for grading.
+
+Thank you
+
+
+To run the app:
+Copy ui.R and server.R in your working directory
+run the follwing code:
+
+library(shiny)
+library(shinyapps)
+runApp()
